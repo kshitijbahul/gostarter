@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 func main() {
 	//var card string = "Ace of Spade"
 	//card := newCard()
@@ -10,5 +12,6 @@ func main() {
 	hand, remaingDeck := deal(cards, 4)
 	hand.print()
 	remaingDeck.print()
+	fmt.Println(hand.toString())
 
 }
