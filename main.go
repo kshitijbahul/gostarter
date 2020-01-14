@@ -12,7 +12,10 @@ func main() {
 	//remaingDeck.print()
 	//fmt.Println(hand.toString())
 	//cards.savetoFile("AllCards")
-	fileDeck := newDeckFromFile("AllCards")
-	fileDeck.print()
+	//fileDeck := newDeckFromFile("AllCards")
+	//fileDeck.print()
+	cards := newDeck()
+	cards.shuffelDeck()
+	cards.print()
 
 }

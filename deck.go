@@ -3,8 +3,10 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"os"
 	"strings"
+	"time"
 )
 
 //create a new type of deck which is a slice of string
@@ -56,4 +58,13 @@ func newDeckFromFile(filename string) deck {
 	fileContent := string(fileBytes)
 	cards := strings.Split(fileContent, ",")
 	return deck(cards)
+}
+func (d deck) shuffelDeck() {
+	source := rand.NewSource(time.Now().UnixNano())
+	rGen := rand.New(source)
+	for i := range d {
+		//newPos := rand.Intn(len(d) - 1)
+		newPos := rGen.Intn(len(d) - 1)
+		d[i], d[newPos] = d[newPos], d[i]
+	}
 }
