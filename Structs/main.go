@@ -37,8 +37,9 @@ func main() {
 	//jim.updateFirstName("Jimmy")
 	//Above doesn't update cause Go passes by value
 	jim.print()
-	pointerToJim := &jim
-	pointerToJim.updateFirstName("Jimmy")
+	//pointerToJim := &jim
+	//pointerToJim.updateFirstName("Jimmy")
+	jim.updateFirstName("Jimmy") //same as above since go converts value implicitly based on reciever
 	jim.print()
 }
 
